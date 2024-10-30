@@ -10,10 +10,11 @@ const producer = kafka.producer()
 const run = async () => {
     await producer.connect()
     await producer.send({
-        topic: 'test-topic',
-        messages: [
-            { value: 'Hello KafkaJS user!' },
-        ],
+        topic: 'payment-done',
+        messages: [{
+            value: "hi there",
+            key: "user1"
+        }],
     })
 }
 
